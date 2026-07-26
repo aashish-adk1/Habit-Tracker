@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import {
   BarChart3,
   CalendarDays,
@@ -24,15 +26,15 @@ import {
 } from '@/components/ui/sidebar'
 
 const primaryNavigation = [
-  { label: 'Dashboard', icon: LayoutDashboard, active: true },
-  { label: 'Timesheets', icon: CalendarDays },
-  { label: 'Projects', icon: FolderOpen },
-  { label: 'Reports', icon: BarChart3 },
+  { label: 'Dashboard', icon: LayoutDashboard, active: true, link: '/' },
+  { label: 'History', icon: CalendarDays, link: '/history' },
+  { label: 'Projects', icon: FolderOpen, link: '/projects' },
+  { label: 'Reports', icon: BarChart3, link: '/reports' },
 ]
 
 const secondaryNavigation = [
-  { label: 'Settings', icon: Settings },
-  { label: 'Support', icon: CircleHelp },
+  { label: 'Settings', icon: Settings, link: '/settings' },
+  { label: 'Support', icon: CircleHelp, link: '/support' },
 ]
 
 function AppSidebar() {
@@ -63,14 +65,15 @@ function AppSidebar() {
             <SidebarMenu className="gap-1">
               {primaryNavigation.map((item) => (
                 <SidebarMenuItem key={item.label}>
-                  <SidebarMenuButton
-                    isActive={item.active}
-                    tooltip={item.label}
-                    className="h-11 gap-3 rounded-[3px] px-3 text-[14px] font-medium text-[#35506e] data-active:bg-white data-active:font-semibold data-active:text-[#07182f] data-active:shadow-[0_3px_10px_rgba(31,46,76,0.05)] hover:bg-white hover:text-[#07182f]"
-                  >
-                    <item.icon className="size-4" />
-                    <span>{item.label}</span>
-                  </SidebarMenuButton>
+                  <NavLink to={item.link}>
+                    <SidebarMenuButton
+                      isActive={item.active}
+                      className="h-11 gap-3 rounded- px-3 text-[14px] font-medium text-[#35506e] data-active:bg-white data-active:font-semibold data-active:text-[#07182f] data-active:shadow-[0_3px_10px_rgba(31,46,76,0.05)] hover:bg-white hover:text-[#07182f] hover:cursor-pointer"
+                    >
+                      <item.icon className="size-4" />
+                      <span>{item.label}</span>
+                    </SidebarMenuButton>
+                  </NavLink>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -80,7 +83,7 @@ function AppSidebar() {
 
       <SidebarFooter className="gap-4 px-4 pb-5">
         <div className="border-t border-[#edf0f5] pt-4">
-          <Button className="h-10 w-full rounded-[4px] bg-black text-[12px] font-semibold text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] hover:bg-[#1c1c1c]">
+          <Button className="h-10 w-full rounded-lg bg-black text-[12px] font-semibold text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] hover:bg-[#1c1c1c]">
             <Plus className="size-3.5" />
             Add Entry
           </Button>
@@ -89,13 +92,14 @@ function AppSidebar() {
         <SidebarMenu className="gap-1 px-1">
           {secondaryNavigation.map((item) => (
             <SidebarMenuItem key={item.label}>
-              <SidebarMenuButton
-                tooltip={item.label}
-                className="h-9 gap-3 px-2 text-[13px] font-medium text-[#45617e] hover:bg-white hover:text-[#07182f]"
-              >
-                <item.icon className="size-4" />
-                <span>{item.label}</span>
-              </SidebarMenuButton>
+              <NavLink to={item.link}>
+                <SidebarMenuButton
+                  className="h-9 gap-3 px-2 text-[13px] font-medium text-[#45617e] hover:bg-white hover:text-[#07182f] hover:cursor-pointer"
+                >
+                  <item.icon className="size-4" />
+                  <span>{item.label}</span>
+                </SidebarMenuButton>
+              </NavLink>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
