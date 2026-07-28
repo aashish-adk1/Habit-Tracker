@@ -5,7 +5,7 @@ const sessions = [
     timeRange: '09:00 AM — 06:15 PM',
     duration: '9h 15m',
     status: 'Approved',
-    dotColor: 'bg-[#4387f5]',
+    dotColor: 'bg-primary',
   },
   {
     project: 'UI Design Revision',
@@ -13,7 +13,7 @@ const sessions = [
     timeRange: '10:30 AM — 04:45 PM',
     duration: '6h 15m',
     status: 'Approved',
-    dotColor: 'bg-[#18b986]',
+    dotColor: 'bg-secondary',
   },
   {
     project: 'Documentation',
@@ -21,26 +21,26 @@ const sessions = [
     timeRange: '01:00 PM — 03:00 PM',
     duration: '2h 00m',
     status: 'Pending',
-    dotColor: 'bg-[#f6b953]',
+    dotColor: 'bg-muted-foreground',
   },
 ]
 
 function RecentSessions() {
   return (
-    <section className="mt-7 text-[#07182f]">
+    <section className="mt-7 text-foreground">
       <header className="flex items-center justify-between gap-4">
         <h2 className="m-0 text-[22px] leading-tight font-bold">
           Recent Sessions
         </h2>
         <button
           type="button"
-          className="cursor-pointer border-0 bg-transparent p-0 text-[13px] font-bold text-[#07182f] hover:text-[#087f5b] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#087f5b]"
+          className="cursor-pointer border-0 bg-transparent p-0 text-[13px] font-bold text-foreground hover:text-primary focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
         >
           View All History
         </button>
       </header>
 
-      <div className="mt-5 hidden grid-cols-[minmax(0,1.4fr)_minmax(150px,1fr)_minmax(100px,0.7fr)_100px] gap-5 px-7 text-[11px] font-bold uppercase tracking-[0.12em] text-[#687180] md:grid">
+      <div className="mt-5 hidden grid-cols-[minmax(0,1.4fr)_minmax(150px,1fr)_minmax(100px,0.7fr)_100px] gap-5 px-7 text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground md:grid">
         <span>Project &amp; Task</span>
         <span>Time Range</span>
         <span>Duration</span>
@@ -54,8 +54,8 @@ function RecentSessions() {
           return (
             <article
               key={session.project}
-              className={`grid gap-4 rounded-[17px] border border-[#f0f2f5] bg-white px-5 py-5 shadow-[0_3px_10px_rgba(31,46,76,0.04)] md:grid-cols-[minmax(0,1.4fr)_minmax(150px,1fr)_minmax(100px,0.7fr)_100px] md:items-center md:gap-5 md:px-7 ${
-                isPending ? 'text-[#7c8694]' : ''
+              className={`grid gap-4 rounded-[17px] border border-border bg-card px-5 py-5 text-card-foreground shadow-sm md:grid-cols-[minmax(0,1.4fr)_minmax(150px,1fr)_minmax(100px,0.7fr)_100px] md:items-center md:gap-5 md:px-7 ${
+                isPending ? 'text-muted-foreground' : ''
               }`}
             >
               <div className="flex min-w-0 items-center gap-4">
@@ -74,14 +74,14 @@ function RecentSessions() {
               </div>
 
               <p className="m-0 text-[13px] font-medium">
-                <span className="mr-2 font-bold text-[#687180] md:hidden">
+                <span className="mr-2 font-bold text-muted-foreground md:hidden">
                   Time:
                 </span>
                 {session.timeRange}
               </p>
 
               <p className="m-0 text-[16px] font-bold">
-                <span className="mr-2 text-[13px] text-[#687180] md:hidden">
+                <span className="mr-2 text-[13px] text-muted-foreground md:hidden">
                   Duration:
                 </span>
                 {session.duration}
@@ -91,8 +91,8 @@ function RecentSessions() {
                 <span
                   className={`inline-flex rounded-full px-3 py-1 text-[9px] font-bold uppercase ${
                     isPending
-                      ? 'bg-[#edf1f6] text-[#7c8694]'
-                      : 'bg-[#64e8b8] text-[#08755a]'
+                      ? 'bg-muted text-muted-foreground'
+                      : 'bg-primary text-primary-foreground'
                   }`}
                 >
                   {session.status}

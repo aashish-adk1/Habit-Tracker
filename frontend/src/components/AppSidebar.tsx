@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import DashboardLogo from '../assets/dashboard-logo.png'
 
 import {
   BarChart3,
   CalendarDays,
   CircleHelp,
-  Clock3,
   FolderOpen,
   LayoutDashboard,
   Plus,
@@ -22,11 +22,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarRail,
 } from '@/components/ui/sidebar'
 
 const primaryNavigation = [
-  { label: 'Dashboard', icon: LayoutDashboard, active: true, link: '/' },
+  { label: 'Dashboard', icon: LayoutDashboard, link: '/' },
   { label: 'History', icon: CalendarDays, link: '/history' },
   { label: 'Projects', icon: FolderOpen, link: '/projects' },
   { label: 'Reports', icon: BarChart3, link: '/reports' },
@@ -38,24 +37,15 @@ const secondaryNavigation = [
 ]
 
 function AppSidebar() {
+  const location = useLocation();
   return (
     <Sidebar
       collapsible="offcanvas"
-      className="border-r border-[#edf0f5] bg-[#f7f9fc]"
+      className="border-r border-sidebar-border bg-sidebar"
     >
       <SidebarHeader className="px-6 pt-5 pb-6">
-        <div className="flex items-center gap-2.5">
-          <div className="flex size-7 items-center justify-center rounded-[5px] bg-[#111827] text-white">
-            <Clock3 className="size-4" />
-          </div>
-          <div className="min-w-0">
-            <p className="m-0 truncate text-[18px] leading-tight font-bold text-[#07182f]">
-              Chronometer
-            </p>
-            <p className="mt-1 mb-0 text-[8px] font-semibold tracking-[0.2em] text-[#64748b]">
-              EXECUTIVE SUITE
-            </p>
-          </div>
+        <div className="flex items-center justify-center">
+          <img src={DashboardLogo} alt="Logo" className='' />
         </div>
       </SidebarHeader>
 
@@ -63,49 +53,55 @@ function AppSidebar() {
         <SidebarGroup className="px-5 py-0">
           <SidebarGroupContent>
             <SidebarMenu className="gap-1">
-              {primaryNavigation.map((item) => (
-                <SidebarMenuItem key={item.label}>
-                  <NavLink to={item.link}>
-                    <SidebarMenuButton
-                      isActive={item.active}
-                      className="h-11 gap-3 rounded- px-3 text-[14px] font-medium text-[#35506e] data-active:bg-white data-active:font-semibold data-active:text-[#07182f] data-active:shadow-[0_3px_10px_rgba(31,46,76,0.05)] hover:bg-white hover:text-[#07182f] hover:cursor-pointer"
-                    >
-                      <item.icon className="size-4" />
-                      <span>{item.label}</span>
-                    </SidebarMenuButton>
-                  </NavLink>
-                </SidebarMenuItem>
-              ))}
+              {primaryNavigation.map((item) => {
+                const isActive = location.pathname === item.link
+                return (
+                  <SidebarMenuItem key={item.label}>
+                    <NavLink to={item.link}>
+                      <SidebarMenuButton
+                        isActive={isActive}
+                        className="h-11 gap-3 border-l-4 border-l-transparent px-3 text-[14px] font-medium text-sidebar-foreground/75 data-active:border-l-primary data-active:bg-sidebar-accent data-active:font-semibold data-active:text-sidebar-accent-foreground data-active:shadow-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:cursor-pointer"
+                      >
+                        <item.icon className="size-4" />
+                        <span>{item.label}</span>
+                      </SidebarMenuButton>
+                    </NavLink>
+                  </SidebarMenuItem>
+                )
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
 
       <SidebarFooter className="gap-4 px-4 pb-5">
-        <div className="border-t border-[#edf0f5] pt-4">
-          <Button className="h-10 w-full rounded-lg bg-black text-[12px] font-semibold text-white shadow-[0_4px_10px_rgba(0,0,0,0.18)] hover:bg-[#1c1c1c]">
+        <div className="border-t border-sidebar-border pt-4">
+          <Button className="h-10 w-full rounded-lg bg-primary text-[12px] font-semibold text-primary-foreground shadow-sm hover:bg-primary/90">
             <Plus className="size-3.5" />
             Add Entry
           </Button>
         </div>
 
         <SidebarMenu className="gap-1 px-1">
-          {secondaryNavigation.map((item) => (
-            <SidebarMenuItem key={item.label}>
-              <NavLink to={item.link}>
-                <SidebarMenuButton
-                  className="h-9 gap-3 px-2 text-[13px] font-medium text-[#45617e] hover:bg-white hover:text-[#07182f] hover:cursor-pointer"
-                >
-                  <item.icon className="size-4" />
-                  <span>{item.label}</span>
-                </SidebarMenuButton>
-              </NavLink>
-            </SidebarMenuItem>
-          ))}
+          {secondaryNavigation.map((item) => {
+            const isActive = location.pathname === item.link
+            return (
+              <SidebarMenuItem key={item.label}>
+                <NavLink to={item.link}>
+                  <SidebarMenuButton
+                    isActive={isActive}
+                    className="h-11 gap-3 border-l-4 border-l-transparent px-3 text-[14px] font-medium text-sidebar-foreground/75 data-active:border-l-secondary data-active:bg-sidebar-accent data-active:font-semibold data-active:text-sidebar-accent-foreground data-active:shadow-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:cursor-pointer"
+                  >
+                    <item.icon className="size-4" />
+                    <span>{item.label}</span>
+                  </SidebarMenuButton>
+                </NavLink>
+              </SidebarMenuItem>
+            )
+          })}
         </SidebarMenu>
       </SidebarFooter>
 
-      <SidebarRail />
     </Sidebar>
   )
 }

@@ -81,14 +81,14 @@ function Navbar() {
 
         <button
           type="button"
-          className="h-9 cursor-pointer rounded-lg border-0 bg-[#087f5b] px-6 text-[11px] font-bold text-white shadow-[0_4px_10px_rgba(8,127,91,0.25)] hover:bg-[#067251] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#087f5b]"
+          className="h-9 cursor-pointer rounded-lg border-0 bg-primary px-6 text-[11px] font-bold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
         >
           Clock In
         </button>
 
         <button
           type="button"
-          className="h-9 cursor-pointer rounded-[12px] border-0 bg-[#f5b43d] px-6 text-[11px] font-bold text-[#533900] shadow-[0_4px_10px_rgba(229,155,20,0.25)] hover:bg-[#eda72c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d58b00]"
+          className="h-9 cursor-pointer rounded-[12px] border-0 bg-secondary px-6 text-[11px] font-bold text-secondary-foreground shadow-sm hover:bg-secondary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
         >
           Clock Out
         </button>

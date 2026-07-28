@@ -1,8 +1,8 @@
 function DailyStreak() {
   return (
-    <section className="flex min-h-26 items-center justify-between rounded-[26px] bg-white px-6 py-5 text-[#07182f] shadow-[0_8px_24px_rgba(31,46,76,0.08)]">
+    <section className="flex min-h-26 items-center justify-between rounded-[26px] bg-card px-6 py-5 text-card-foreground shadow-sm">
       <div>
-        <p className="m-0 text-[13px] font-bold uppercase tracking-[0.08em] text-[#687180]">
+        <p className="m-0 text-[13px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
           Daily Streak
         </p>
 
@@ -12,7 +12,7 @@ function DailyStreak() {
         </p>
       </div>
 
-      <div className="flex h-12 w-12 items-center justify-center rounded-[17px] bg-[#fff0bd] text-[#f29100]">
+      <div className="flex h-12 w-12 items-center justify-center rounded-[17px] bg-secondary/20 text-secondary">
         <svg
           aria-hidden="true"
           className="h-7 w-7"

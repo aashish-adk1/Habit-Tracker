@@ -30,8 +30,8 @@ function CurrentSession({ isRunning }: CurrentSessionProps) {
   }, [isRunning])
 
   return (
-    <section className="w-full rounded-[36px] bg-linear-to-r from-[#e7eeff] via-[#e9f3fb] to-[#d8f7f3] px-8 py-12 text-[#07182f] shadow-[0_22px_35px_rgba(40,55,80,0.14)] sm:px-15 sm:py-14.5">
-      <p className="m-0 text-[13px] font-bold uppercase tracking-[0.38em] text-[#293442] sm:text-[15px]">
+    <section className="w-full rounded-[36px] bg-linear-to-r from-[#e7eeff] via-[#e9f3fb] to-[#d8f7f3] px-8 py-12 text-secondary-foreground shadow-[0_22px_35px_rgba(40,55,80,0.14)] sm:px-15 sm:py-14.5">
+      <p className="m-0 text-[13px] font-bold uppercase tracking-[0.38em] text-secondary-foreground/80 sm:text-[15px]">
         Current Session
       </p>
 
@@ -39,7 +39,7 @@ function CurrentSession({ isRunning }: CurrentSessionProps) {
         {formatTime(elapsedSeconds)}
       </p>
 
-      <div className="flex items-center gap-3 text-[17px] font-semibold text-[#4a4e55] sm:text-[20px]">
+      <div className="flex items-center gap-3 text-[17px] font-semibold text-secondary-foreground/75 sm:text-[20px]">
         <svg
           aria-hidden="true"
           className="h-5 w-5 shrink-0"
@@ -65,7 +65,7 @@ function CurrentSession({ isRunning }: CurrentSessionProps) {
 
         <p className="m-0">
           Active Project:{' '}
-          <span className="font-bold text-[#15293b] underline decoration-2 underline-offset-4">
+          <span className="font-bold text-secondary-foreground underline decoration-2 underline-offset-4">
             UI Design Revision
           </span>
         </p>

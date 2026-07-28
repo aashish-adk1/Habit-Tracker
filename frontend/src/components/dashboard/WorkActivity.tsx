@@ -27,13 +27,13 @@ const activityData = createActivityData()
 
 function WorkActivity() {
   return (
-    <section className="mt-5 rounded-[30px] bg-white px-7 py-7 text-[#07182f] shadow-[0_8px_24px_rgba(31,46,76,0.08)] sm:px-8">
+    <section className="mt-5 rounded-[30px] bg-card px-7 py-7 text-card-foreground shadow-sm sm:px-8">
       <header className="flex items-start justify-between gap-4">
         <div>
           <h2 className="m-0 text-[18px] leading-tight font-bold">
             Work Activity
           </h2>
-          <p className="mt-1 mb-0 text-[12px] text-[#525b68]">
+          <p className="mt-1 mb-0 text-[12px] text-muted-foreground">
             Performance metrics for the last 4 weeks
           </p>
         </div>
@@ -41,14 +41,14 @@ function WorkActivity() {
         <button
           type="button"
           aria-label="More work activity options"
-          className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent text-[20px] leading-none text-[#07182f] hover:bg-[#f2f5f9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#087f5b]"
+          className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent text-[20px] leading-none text-card-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
         >
           <span aria-hidden="true">...</span>
         </button>
       </header>
 
       <div className="mt-7 grid gap-8 md:grid-cols-[minmax(0,1fr)_180px] md:items-center">
-        <div className="min-w-0 md:border-r md:border-[#f0f2f5] md:pr-8">
+        <div className="min-w-0 md:border-r md:border-border md:pr-8">
           <div className="w-fit max-w-full overflow-x-auto pb-1">
             <ActivityCalendar
               data={activityData}
@@ -62,11 +62,11 @@ function WorkActivity() {
               showTotalCount={false}
               theme={{
                 light: [
-                  '#edf5f2',
-                  '#d9ebe6',
-                  '#b7d8ce',
-                  '#77b6a3',
-                  '#087f5b',
+                  'var(--muted)',
+                  'color-mix(in oklch, var(--primary) 20%, var(--muted))',
+                  'color-mix(in oklch, var(--primary) 40%, var(--muted))',
+                  'color-mix(in oklch, var(--primary) 65%, var(--muted))',
+                  'var(--primary)',
                 ],
               }}
               tooltips={{
@@ -79,7 +79,7 @@ function WorkActivity() {
             />
           </div>
 
-          <div className="mt-4 flex justify-between px-1 text-[9px] font-bold tracking-[0.08em] text-[#798391]">
+          <div className="mt-4 flex justify-between px-1 text-[9px] font-bold tracking-[0.08em] text-muted-foreground">
             <span>AUG 01</span>
             <span>AUG 28</span>
           </div>
@@ -87,15 +87,15 @@ function WorkActivity() {
 
         <dl className="m-0 grid grid-cols-2 gap-6 md:grid-cols-1">
           <div>
-            <dt className="text-[11px] text-[#414a57]">Avg. Productivity</dt>
+            <dt className="text-[11px] text-muted-foreground">Avg. Productivity</dt>
             <dd className="m-0 mt-1 text-[22px] leading-none font-bold">
               8.4 hrs/day
             </dd>
           </div>
 
           <div>
-            <dt className="text-[11px] text-[#414a57]">Best Performance</dt>
-            <dd className="m-0 mt-1 text-[22px] leading-none font-bold text-[#008058]">
+            <dt className="text-[11px] text-muted-foreground">Best Performance</dt>
+            <dd className="m-0 mt-1 text-[22px] leading-none font-bold text-primary">
               Tuesday
             </dd>
           </div>
