@@ -1,3 +1,4 @@
+import eslintPluginPrettier from 'eslint-config-prettier';
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -31,4 +32,5 @@ export default defineConfig([
       'react-hooks/set-state-in-effect': 'off',
     },
   },
+  eslintPluginPrettier,
 ])

@@ -7,7 +7,7 @@ function ClockOut({ onClockOut }: ClockOutProps) {
     <button
       type="button"
       onClick={onClockOut}
-      className="flex min-h-[120px] w-full cursor-pointer items-center justify-between rounded-[24px] border-0 bg-secondary px-8 py-6 text-left text-secondary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-secondary/90 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
+      className="flex min-h-[120px] w-full cursor-pointer items-center justify-between rounded-[3px] border-0 bg-secondary px-8 py-6 text-left text-secondary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-secondary/90 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
     >
       <span>
         <span className="block text-[24px] leading-tight font-bold">

@@ -54,7 +54,7 @@ function RecentSessions() {
           return (
             <article
               key={session.project}
-              className={`grid gap-4 rounded-[17px] border border-border bg-card px-5 py-5 text-card-foreground shadow-sm md:grid-cols-[minmax(0,1.4fr)_minmax(150px,1fr)_minmax(100px,0.7fr)_100px] md:items-center md:gap-5 md:px-7 ${
+              className={`grid gap-4 rounded-[3px] border border-border bg-card px-5 py-5 text-card-foreground shadow-sm md:grid-cols-[minmax(0,1.4fr)_minmax(150px,1fr)_minmax(100px,0.7fr)_100px] md:items-center md:gap-5 md:px-7 ${
                 isPending ? 'text-muted-foreground' : ''
               }`}
             >
@@ -91,7 +91,7 @@ function RecentSessions() {
                 <span
                   className={`inline-flex rounded-full px-3 py-1 text-[9px] font-bold uppercase ${
                     isPending
-                      ? 'bg-muted text-muted-foreground'
+                      ? 'bg-secondary text-secondary-foreground'
                       : 'bg-primary text-primary-foreground'
                   }`}
                 >

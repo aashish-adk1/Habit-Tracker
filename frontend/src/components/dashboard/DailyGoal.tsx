@@ -1,6 +1,6 @@
 function DailyGoal() {
   return (
-    <section className="rounded-[26px] bg-card px-6 py-5 text-card-foreground shadow-sm">
+    <section className="rounded-[3px] bg-card px-6 py-5 text-card-foreground shadow-sm">
       <p className="m-0 text-[13px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
         Daily Goal
       </p>

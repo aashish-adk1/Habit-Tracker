@@ -27,7 +27,7 @@ const activityData = createActivityData()
 
 function WorkActivity() {
   return (
-    <section className="mt-5 rounded-[30px] bg-card px-7 py-7 text-card-foreground shadow-sm sm:px-8">
+    <section className="mt-5 rounded-[3px] bg-card px-7 py-7 text-card-foreground shadow-sm sm:px-8">
       <header className="flex items-start justify-between gap-4">
         <div>
           <h2 className="m-0 text-[18px] leading-tight font-bold">
@@ -88,7 +88,7 @@ function WorkActivity() {
         <dl className="m-0 grid grid-cols-2 gap-6 md:grid-cols-1">
           <div>
             <dt className="text-[11px] text-muted-foreground">Avg. Productivity</dt>
-            <dd className="m-0 mt-1 text-[22px] leading-none font-bold">
+            <dd className="m-0 mt-1 text-[22px] leading-none font-bold text-primary">
               8.4 hrs/day
             </dd>
           </div>

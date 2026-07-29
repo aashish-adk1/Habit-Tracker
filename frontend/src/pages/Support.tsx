@@ -1,8 +1,5 @@
-
 const Support = () => {
-  return (
-    <div>Support</div>
-  )
-}
+  return <div>Support</div>;
+};
 
-export default Support
+export default Support;
