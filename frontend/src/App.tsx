@@ -5,7 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import Support from "./pages/Support";
-import History from "./pages/History";
+import Habits from "./pages/Habits";
 import Projects from "./pages/Projects";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/reports" element={<Reports />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/support" element={<Support />} />
-        <Route path="/history" element={<History />} />
+        <Route path="/Habits" element={<Habits />} />
         <Route path="/projects" element={<Projects />} />
       </Route>
       

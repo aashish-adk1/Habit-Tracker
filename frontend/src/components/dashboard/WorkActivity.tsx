@@ -27,7 +27,7 @@ const activityData = createActivityData()
 
 function WorkActivity() {
   return (
-    <section className="mt-5 rounded-[3px] bg-card px-7 py-7 text-card-foreground shadow-sm sm:px-8">
+    <section className="mt-5 rounded-xs bg-card px-7 py-7 text-card-foreground shadow-sm sm:px-8">
       <header className="flex items-start justify-between gap-4">
         <div>
           <h2 className="m-0 text-[18px] leading-tight font-bold">

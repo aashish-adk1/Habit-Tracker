@@ -26,7 +26,7 @@ import {
 
 const primaryNavigation = [
   { label: 'Dashboard', icon: LayoutDashboard, link: '/' },
-  { label: 'History', icon: CalendarDays, link: '/history' },
+  { label: 'Habits', icon: CalendarDays, link: '/Habits' },
   { label: 'Projects', icon: FolderOpen, link: '/projects' },
   { label: 'Reports', icon: BarChart3, link: '/reports' },
 ]

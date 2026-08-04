@@ -7,7 +7,7 @@ function ClockIn({ onClockIn }: ClockInProps) {
     <button
       type="button"
       onClick={onClockIn}
-      className="flex min-h-[120px] w-full cursor-pointer items-center justify-between rounded-[3px] border-0 bg-primary px-8 py-6 text-left text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
+      className="flex min-h-[120px] w-full cursor-pointer items-center justify-between rounded-xs border-0 bg-primary px-8 py-6 text-left text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
     >
       <span>
         <span className="block text-[24px] leading-tight font-bold">

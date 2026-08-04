@@ -1,6 +1,6 @@
 function DailyStreak() {
   return (
-    <section className="flex min-h-26 items-center justify-between rounded-[3px] bg-card px-6 py-5 text-card-foreground shadow-sm">
+    <section className="flex min-h-26 items-center justify-between rounded-xs bg-card px-6 py-5 text-card-foreground shadow-sm">
       <div>
         <p className="m-0 text-[13px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
           Daily Streak

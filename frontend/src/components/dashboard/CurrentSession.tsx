@@ -30,7 +30,7 @@ function CurrentSession({ isRunning }: CurrentSessionProps) {
   }, [isRunning])
 
   return (
-    <section className="w-full rounded-[3px] bg-linear-to-r from-[#e7eeff] via-[#e9f3fb] to-[#d8f7f3] px-8 py-12 text-secondary-foreground shadow-[0_22px_35px_rgba(40,55,80,0.14)] sm:px-15 sm:py-14.5">
+    <section className="w-full rounded-xs bg-primary-gradient px-8 py-12 text-secondary-foreground shadow-[0_22px_35px_rgba(40,55,80,0.14)] sm:px-15 sm:py-14.5">
       <p className="m-0 text-[13px] font-bold uppercase tracking-[0.38em] text-secondary-foreground/80 sm:text-[15px]">
         Current Session
       </p>

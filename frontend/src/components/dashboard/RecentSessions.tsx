@@ -36,7 +36,7 @@ function RecentSessions() {
           type="button"
           className="cursor-pointer border-0 bg-transparent p-0 text-[13px] font-bold text-foreground hover:text-primary focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
         >
-          View All History
+          View All Habits
         </button>
       </header>
 
@@ -54,7 +54,7 @@ function RecentSessions() {
           return (
             <article
               key={session.project}
-              className={`grid gap-4 rounded-[3px] border border-border bg-card px-5 py-5 text-card-foreground shadow-sm md:grid-cols-[minmax(0,1.4fr)_minmax(150px,1fr)_minmax(100px,0.7fr)_100px] md:items-center md:gap-5 md:px-7 ${
+              className={`grid gap-4 rounded-xs border border-border bg-card px-5 py-5 text-card-foreground shadow-sm md:grid-cols-[minmax(0,1.4fr)_minmax(150px,1fr)_minmax(100px,0.7fr)_100px] md:items-center md:gap-5 md:px-7 ${
                 isPending ? 'text-muted-foreground' : ''
               }`}
             >
